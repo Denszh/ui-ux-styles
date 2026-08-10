@@ -3,121 +3,77 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Brutalism — UI/UX Pro Max</title>
+<title>Brutalism — UI/UX Pro Max #4</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif; -webkit-font-smoothing: antialiased; line-height: 1.5; min-height: 100vh; padding-bottom: 40px; }
-  a { text-decoration: none; }
+  body { -webkit-font-smoothing: antialiased; line-height: 1.5; min-height: 100vh; padding-bottom: 40px; overflow-x: hidden; }
+  a { text-decoration: none; color: inherit; }
   .container { max-width: 1080px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 1; }
   .small { font-size: .78rem; }
-  .muted { opacity: .75; }
+  .muted { opacity: .7; }
 
-  /* Nav */
   nav { position: sticky; top: 0; z-index: 100; padding: 14px 0; }
   nav .nav-inner { max-width: 1080px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center; }
-  nav .logo { font-weight: 700; font-size: 1.05rem; }
+  nav .logo { font-weight: 700; font-size: 1.05rem; color: var(--fg); }
   nav .links { display: flex; gap: 22px; font-size: .88rem; font-weight: 500; }
   nav .links span { cursor: pointer; opacity: .7; }
   nav .links span:hover { opacity: 1; }
-  nav .nav-actions { display: flex; gap: 8px; }
-  nav .btn { padding: 7px 16px; font-size: .82rem; }
-
   .btn { display: inline-flex; align-items: center; justify-content: center; padding: 12px 30px; font-size: .92rem; cursor: pointer; transition: all .25s ease; font-family: inherit; }
-  .btn:hover { transform: translateY(-1px); }
+  .btn.secondary { font-family: inherit; }
 
-  /* Hero */
   .hero { padding: 72px 0 48px; }
   .hero-inner { display: flex; align-items: center; justify-content: space-between; gap: 40px; }
-  .hero h1 { font-size: clamp(2rem, 5vw, 3.2rem); line-height: 1.1; margin: 16px 0 12px; }
+  .hero h1 { font-size: clamp(2rem, 5vw, 3.2rem); line-height: 1.1; margin: 16px 0 12px; font-weight: 800; }
   .hero-btns { display: flex; gap: 12px; margin-top: 20px; flex-wrap: wrap; }
   .tags { display: flex; gap: 8px; flex-wrap: wrap; }
   .tag { display: inline-block; padding: 4px 14px; font-size: .78rem; border-radius: 999px; }
   .badge { display: inline-block; padding: 4px 12px; font-size: .72rem; font-weight: 600; border-radius: 999px; text-transform: uppercase; letter-spacing: .5px; }
-  .badge.small { font-size: .65rem; padding: 2px 8px; }
 
-  /* Ring */
-  .ring { width: 150px; height: 150px; border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center; background: conic-gradient(var(--primary,#0071e3) var(--p,72%), transparent 0); position: relative; }
-  .ring::before { content:''; position: absolute; inset: 14px; border-radius: 50%; background: var(--card,#fff); }
-  .ring span, .ring small { position: relative; z-index: 1; }
+  .ring { width: 150px; height: 150px; border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center; background: conic-gradient(var(--acc) var(--p,72%), transparent 0); position: relative; }
+  .ring::before { content:''; position: absolute; inset: 14px; border-radius: 50%; background: var(--bg); }
+  .ring span, .ring small { position: relative; z-index: 1; color: var(--fg); }
   .ring span { font-size: 1.8rem; font-weight: 700; }
   .ring small { font-size: .7rem; opacity: .7; }
 
-  /* Feats */
   .feats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin: 24px 0; }
-  .feat { padding: 28px 24px; }
+  .feat { padding: 28px 24px; transition: transform .3s; }
+  .feat:hover { transform: translateY(-4px); }
   .feat-icon { font-size: 1.9rem; margin-bottom: 12px; }
   .feat h3 { font-size: 1.05rem; margin-bottom: 8px; }
   .feat p { font-size: .88rem; line-height: 1.6; }
 
-  /* Charts */
   .charts { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin: 24px 0; }
   .chart-card { padding: 24px; }
-  .chart-card h3 { font-size: .95rem; margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
+  .chart-card h3 { font-size: .95rem; margin-bottom: 16px; display: flex; align-items: center; gap: 8px; color: var(--fg); }
   .bar-chart { display: flex; align-items: flex-end; gap: 8px; height: 160px; padding-top: 8px; }
   .chart-col { flex: 1; display: flex; flex-direction: column; align-items: center; height: 100%; justify-content: flex-end; gap: 6px; }
   .chart-col .bar { width: 100%; max-width: 34px; height: 100%; border-radius: 6px 6px 0 0; display: flex; align-items: flex-end; overflow: hidden; }
   .chart-col .fill { width: 100%; border-radius: 6px 6px 0 0; transition: height .5s; }
-  .chart-col span { font-size: .68rem; opacity: .6; }
-  .line-chart-wrap { height: 160px; position: relative; }
-  .line-chart { position: absolute; inset: 0; background: linear-gradient(180deg, transparent 20%, rgba(128,128,128,.08) 20%, transparent 21%, transparent 40%, rgba(128,128,128,.08) 40%, transparent 41%, transparent 60%, rgba(128,128,128,.08) 60%, transparent 61%, transparent 80%, rgba(128,128,128,.08) 80%, transparent 81%); }
-  .dot { position: absolute; width: 8px; height: 8px; border-radius: 50%; background: var(--primary,#0071e3); transform: translate(-50%,50%); box-shadow: 0 0 8px rgba(0,113,227,.4); }
+  .chart-col span { font-size: .68rem; opacity: .6; color: var(--fg); }
 
-  /* Stats */
   .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin: 24px 0; }
   .stat-card { padding: 28px 20px; text-align: center; }
-  .stat-card .num { font-size: 2.2rem; font-weight: 700; letter-spacing: -1px; margin-bottom: 4px; }
+  .stat-card .num { font-size: 2.2rem; font-weight: 700; letter-spacing: -1px; margin-bottom: 4px; color: var(--fg); }
   .stat-card .muted { font-size: .82rem; }
 
-  /* Bottom grid */
   .bottom-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin: 24px 0; }
   .list-card, .form-card { padding: 24px; }
-  .list-item { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px solid rgba(128,128,128,.12); font-size: .88rem; }
+  .list-item { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px solid rgba(128,128,128,.12); font-size: .88rem; color: var(--fg); }
   .list-item:last-child { border-bottom: none; }
-  input, select, textarea { width: 100%; padding: 11px 14px; font-size: .88rem; font-family: inherit; outline: none; }
-  input:focus { border-color: var(--primary,#0071e3); }
+  input, select, textarea { width: 100%; padding: 11px 14px; font-size: .88rem; font-family: inherit; outline: none; border-radius: 8px; }
+  input:focus { border-color: var(--acc); }
 
-  /* CTA */
   .cta { padding: 48px; text-align: center; margin: 24px 0; }
-  .cta h2 { font-size: clamp(1.5rem, 3vw, 2rem); margin-bottom: 10px; }
-  .cta .btn { margin-top: 16px; }
+  .cta h2 { font-size: clamp(1.5rem, 3vw, 2rem); margin-bottom: 10px; color: var(--fg); }
+  .cta p { color: var(--fg); }
 
-  /* Progress */
-  .progress .bar { height: 6px; border-radius: 3px; overflow: hidden; }
-  .progress .fill { height: 100%; border-radius: 3px; }
-
-  /* 色板 */
   .swatch-bar { display: flex; gap: 6px; margin: 24px 0; }
-  .swatch-bar span { flex: 1; height: 40px; border-radius: 8px; border: 1px solid rgba(128,128,128,.2); }
-
-  /* 移动端 */
-  .phone-wrap { display: flex; flex-direction: column; align-items: center; padding: 40px 0; }
-  .phone { width: 340px; max-width: 92vw; border-radius: 36px; padding: 0 16px 12px; position: relative; overflow: hidden; }
-  .phone-notch { width: 110px; height: 24px; border-radius: 0 0 14px 14px; background: #000; margin: 0 auto 10px; }
-  .app-nav { display: flex; justify-content: space-between; align-items: center; padding: 10px 4px; }
-  .app-logo { font-weight: 700; font-size: 1rem; }
-  .app-avatar { width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: .7rem; font-weight: 700; background: rgba(128,128,128,.2); }
-  .app-hero { padding: 18px; margin-bottom: 12px; }
-  .hero-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
-  .stats-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: 12px; }
-  .stats-row .stat-card { padding: 14px 8px; }
-  .stats-row .num { font-size: 1.1rem; }
-  .quick-actions { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-bottom: 12px; }
-  .action { display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 10px 4px; }
-  .action-icon { font-size: 1.3rem; }
-  .feed { display: flex; flex-direction: column; gap: 8px; }
-  .feed-item { display: flex; gap: 10px; align-items: center; padding: 12px; }
-  .feed-avatar { width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: .75rem; font-weight: 700; background: rgba(128,128,128,.15); flex-shrink: 0; }
-  .feed-body strong { font-size: .85rem; display: block; }
-  .feed-body p { font-size: .72rem; }
-  .app-tabs { display: flex; justify-content: space-around; padding: 10px 0 4px; border-top: 1px solid rgba(128,128,128,.12); margin-top: 10px; }
-  .tab { font-size: .75rem; opacity: .5; cursor: pointer; }
-  .tab.active { opacity: 1; font-weight: 600; }
+  .swatch-bar span { flex: 1; height: 40px; border-radius: 8px; }
 
   footer { text-align: center; padding: 24px 0; font-size: .8rem; border-top: 1px solid rgba(128,128,128,.12); margin-top: 24px; }
   footer a { opacity: .7; }
-  footer a:hover { opacity: 1; }
 
   @media(max-width:768px) {
     .hero-inner { flex-direction: column; text-align: center; }
@@ -126,28 +82,37 @@
     nav .links { display: none; }
   }
 
+  :root {
+    --bg: #FFFFFF;
+    --fg: #000000;
+    --acc: #FF0000;
+    --acc2: #FF0000;
+    --acc3: #FF0000;
+    --bg-attr: solid;
+    --radius: 0;
+  }
 
-  :root { --border: 3px solid #000; --shadow: 8px 8px 0 #000; --radius: 0px; }
-  body { background: #fff; color: #000; }
-  nav { background: #fff; border-bottom: 3px solid #000; }
-  nav a, nav .logo { color: #000; font-weight: 800; }
-  .card, .stat-card, .chart-card, .cta, .phone { background: #fff; border: 3px solid #000; border-radius: 0; box-shadow: 8px 8px 0 #000; }
-  .btn { background: #FF0000; color: #fff; border: 3px solid #000; border-radius: 0; box-shadow: 6px 6px 0 #000; font-weight: 800; text-transform: uppercase; }
-  .btn.secondary { background: #fff; color: #000; }
-  .btn:hover { box-shadow: 3px 3px 0 #000; transform: translate(3px,3px); }
-  h1 { font-weight: 900; text-transform: uppercase; letter-spacing: -2px; font-size: 2.6rem; line-height: .95; }
-  h2, h3 { font-weight: 900; text-transform: uppercase; }
-  .muted { color: #555; font-weight: 600; }
-  .bar { background: #eee; } .bar .fill { background: #000; }
-  .ring { border-color: #000; }
-  .tag { background: #FFFF00; border: 2px solid #000; color: #000; font-weight: 700; }
-  .badge { background: #000; color: #fff; }
-  .ticker { background: #FF0000; color: #fff; border: 3px solid #000; font-weight: 700; text-transform: uppercase; padding: 8px; text-align: center; }
-  input, select, textarea { border: 3px solid #000; border-radius: 0; background: #fff; color: #000; }
-  footer { border-top: 3px solid #000; color: #666; }
+  body { font-family: "Inter", -apple-system, sans-serif; }
+  .btn { background: var(--acc); color: #fff; border: 3px solid #000; border-radius: 8px; box-shadow: 5px 5px 0 #000; }
+  .btn.secondary { background: transparent; color: var(--acc); border: 2px solid var(--acc); box-shadow: none; }
+  .btn:hover { transform: translateY(-1px); }
+  .card, .feat, .stat-card, .chart-card, .cta, .list-card, .form-card, .feed-item { background: #ffffff; border: 3px solid #000; border-radius: 0px; box-shadow: 8px 8px 0 rgba(0,0,0,1); }
+  nav { background: rgba(255,255,255,.9); backdrop-filter: blur(16px); }
+  h1, h2, h3 { color: var(--fg); }
+  .muted { color: var(--fg); opacity: .65; }
+  .bar { background: rgba(128,128,128,.18); }
+  .bar .fill { background: var(--acc); }
+  .tag { background: transparent; border: 1px solid var(--acc); color: var(--acc); }
+  .badge { background: var(--acc); color: #fff; }
+  input, select, textarea { background: #ffffff; border: 3px solid #000; color: var(--fg); }
+  .swatch-bar span { border: 1px solid rgba(128,128,128,.25); }
+  footer { color: var(--fg); opacity: .6; }
+
+
 </style>
 </head>
 <body>
+
 <div class="container">
   <nav>
     <div class="nav-inner">
@@ -165,12 +130,11 @@
   </div>
 
   
-  <!-- HERO -->
   <section class="hero">
     <div class="hero-inner">
       <div class="hero-left">
-        <div class="badge">General · Brutalism</div>
-        <h1>让 <em>Brutalism</em><br>定义你的产品</h1>
+        <div class="badge">General · #4</div>
+        <h1>让 <em data-text="Brutalism">Brutalism</em><br>定义你的产品</h1>
         <p class="muted" style="font-size:1.05rem;">完整的设计系统 · 开箱即用的组件库 · 多平台适配</p>
         <div class="hero-btns">
           <span class="btn">立即开始</span>
@@ -186,43 +150,37 @@
     </div>
   </section>
 
-  <!-- 特性 -->
   <section class="feats">
-    <div class="card feat"><div class="feat-icon">🎨</div><h3>视觉系统</h3><p class="muted">完整的设计语言与组件库</p></div>
-    <div class="card feat"><div class="feat-icon">⚡</div><h3>极致性能</h3><p class="muted">轻量流畅的渲染引擎</p></div>
-    <div class="card feat"><div class="feat-icon">🌐</div><h3>多端适配</h3><p class="muted">Web · iOS · Android · 桌面</p></div>
+<div class="card feat"><div class="feat-icon">🎨</div><h3>视觉系统</h3><p class="muted">完整的设计语言与组件库</p></div><div class="card feat"><div class="feat-icon">⚡</div><h3>极致性能</h3><p class="muted">轻量流畅的渲染引擎</p></div><div class="card feat"><div class="feat-icon">🌐</div><h3>多端适配</h3><p class="muted">Web · iOS · Android · 桌面</p></div>
   </section>
 
-  <!-- 图表区 -->
+  
+
   <section class="charts">
     <div class="chart-card">
-      <h3>周活跃趋势 <span class="live-dot" style="display:inline-block;width:8px;height:8px;border-radius:50%;margin-left:6px;"></span></h3>
+      <h3>周活跃趋势</h3>
       <div class="bar-chart"><div class="chart-col"><div class="bar"><div class="fill" style="height:45%"></div></div><span>一</span></div><div class="chart-col"><div class="bar"><div class="fill" style="height:72%"></div></div><span>二</span></div><div class="chart-col"><div class="bar"><div class="fill" style="height:55%"></div></div><span>三</span></div><div class="chart-col"><div class="bar"><div class="fill" style="height:88%"></div></div><span>四</span></div><div class="chart-col"><div class="bar"><div class="fill" style="height:64%"></div></div><span>五</span></div><div class="chart-col"><div class="bar"><div class="fill" style="height:95%"></div></div><span>六</span></div><div class="chart-col"><div class="bar"><div class="fill" style="height:78%"></div></div><span>日</span></div></div>
     </div>
     <div class="chart-card">
-      <h3>增长曲线</h3>
-      <div class="line-chart-wrap"><div class="line-chart"><div class="dot" style="left:0.0%;bottom:20%"></div><div class="dot" style="left:12.5%;bottom:45%"></div><div class="dot" style="left:25.0%;bottom:35%"></div><div class="dot" style="left:37.5%;bottom:60%"></div><div class="dot" style="left:50.0%;bottom:50%"></div><div class="dot" style="left:62.5%;bottom:80%"></div><div class="dot" style="left:75.0%;bottom:65%"></div><div class="dot" style="left:87.5%;bottom:90%"></div></div></div>
+      <h3>核心指标</h3>
+      <div class="stats" style="grid-template-columns:1fr;margin:0;gap:10px;">
+        <div class="stat-card" style="padding:14px;"><div class="num" style="font-size:1.5rem;">98%</div><div class="muted small">用户满意度</div></div>
+        <div class="stat-card" style="padding:14px;"><div class="num" style="font-size:1.5rem;">12.4k</div><div class="muted small">活跃用户</div></div>
+        <div class="stat-card" style="padding:14px;"><div class="num" style="font-size:1.5rem;">48ms</div><div class="muted small">响应延迟</div></div>
+      </div>
     </div>
   </section>
 
-  <!-- 统计 -->
-  <section class="stats">
-    <div class="stat-card"><div class="num grad-text">12.4k</div><div class="muted">活跃用户</div></div>
-    <div class="stat-card"><div class="num grad-text">98%</div><div class="muted">满意度</div></div>
-    <div class="stat-card"><div class="num grad-text">48ms</div><div class="muted">响应延迟</div></div>
-  </section>
-
-  <!-- 列表 + 表单 -->
   <section class="bottom-grid">
     <div class="card list-card">
-      <h3>最近动态</h3>
+      <h3 style="color:var(--fg);margin-bottom:8px;">最近动态</h3>
       <div class="list-item"><span>版本 v2.0 发布</span><span class="badge small">新</span></div>
       <div class="list-item"><span>设计系统更新</span><span class="muted small">2h</span></div>
       <div class="list-item"><span>性能优化</span><span class="muted small">5h</span></div>
       <div class="list-item"><span>新组件上线</span><span class="muted small">1d</span></div>
     </div>
     <div class="card form-card">
-      <h3>订阅更新</h3>
+      <h3 style="color:var(--fg);margin-bottom:8px;">订阅更新</h3>
       <input type="email" placeholder="输入邮箱地址">
       <div style="display:flex;gap:10px;margin-top:10px;">
         <span class="btn" style="flex:1;text-align:center;">订阅</span>
@@ -231,10 +189,9 @@
     </div>
   </section>
 
-  <!-- CTA -->
   <section class="cta">
     <h2>准备好开始了吗？</h2>
-    <p class="muted" style="color:inherit;opacity:.85;">立即体验 Brutalism 风格</p>
+    <p class="muted">立即体验 Brutalism 风格</p>
     <div class="hero-btns" style="justify-content:center;">
       <span class="btn">免费试用</span>
       <span class="btn secondary">联系销售</span>
