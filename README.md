@@ -7,7 +7,6 @@
 | 平台 | 地址 |
 |------|------|
 | **GitHub Pages** | https://denszh.github.io/ui-ux-styles/ |
-| **阿里云** | http://47.120.30.1/ui-ux/ |
 
 下载整个仓库，双击 `index.html` 即可本地浏览，**断网也能用**（唯一外部引用是 Google Fonts，离线自动回退）。
 
