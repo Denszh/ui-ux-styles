@@ -546,14 +546,39 @@
       </a></div>
 </div>
 <script>
+const SKEY = 'uiux_state';
+function applyFilter(f) {
+  document.querySelectorAll('.filters button').forEach(x => x.classList.toggle('active', x.dataset.f === f));
+  document.querySelectorAll('.card').forEach(c => {
+    c.style.display = (f === 'all' || c.querySelector('.tag').textContent === f) ? '' : 'none';
+  });
+}
+function saveState() {
+  const active = document.querySelector('.filters button.active');
+  sessionStorage.setItem(SKEY, JSON.stringify({ scroll: window.scrollY, filter: active ? active.dataset.f : 'all' }));
+}
+function restoreState() {
+  const s = sessionStorage.getItem(SKEY);
+  if (!s) return;
+  try {
+    const st = JSON.parse(s);
+    applyFilter(st.filter || 'all');
+    window.scrollTo(0, st.scroll || 0);
+  } catch(e) {}
+}
 document.querySelectorAll('.filters button').forEach(b => {
-  b.onclick = () => {
-    document.querySelectorAll('.filters button').forEach(x => x.classList.remove('active'));
-    b.classList.add('active');
-    document.querySelectorAll('.card').forEach(c => {
-      c.style.display = (b.dataset.f === 'all' || c.querySelector('.tag').textContent === b.dataset.f) ? '' : 'none';
-    });
-  };
+  b.onclick = () => { applyFilter(b.dataset.f); saveState(); };
+});
+document.querySelectorAll('.card').forEach(c => {
+  c.addEventListener('click', saveState);
+});
+// 返回时恢复位置 (bfcache 不可用时兜底; bfcache 生效则自动保留)
+window.addEventListener('pageshow', e => {
+  if (e.persisted) { restoreState(); return; }
+  if (sessionStorage.getItem('uiux_back') === '1') {
+    sessionStorage.removeItem('uiux_back');
+    restoreState();
+  }
 });
 </script>
 </body>
