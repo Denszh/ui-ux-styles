@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UI/UX Pro Max — 84 种风格实景界面</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: "Inter", sans-serif; background: #f5f5f7; color: #1d1d1f; }
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+  header { padding: 48px 0 24px; text-align: center; }
+  header h1 { font-size: 2rem; font-weight: 800; letter-spacing: -0.5px; }
+  header p { color: #6e6e73; margin-top: 8px; }
+  .filters { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; margin: 20px 0 24px; }
+  .filters button { background: #fff; border: 1px solid #e5e5e7; padding: 8px 18px; border-radius: 20px; font-size: 0.82rem; font-weight: 600; cursor: pointer; font-family: inherit; color: #6e6e73; transition: all 0.2s; }
+  .filters button:hover { border-color: #0071e3; color: #0071e3; }
+  .filters button.active { background: #0071e3; color: #fff; border-color: #0071e3; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 14px; padding-bottom: 48px; }
+  .card { background: #fff; border-radius: 14px; border: 1px solid #e5e5e7; padding: 16px; text-decoration: none; color: inherit; transition: all 0.2s; display: block; }
+  .card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.08); border-color: #0071e3; }
+  .swatches { display: flex; gap: 3px; height: 32px; margin-bottom: 12px; }
+  .swatches span { flex: 1; border-radius: 4px; border: 1px solid #eee; }
+  .tag { font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #0071e3; margin-bottom: 4px; }
+  .title { font-size: 0.9rem; font-weight: 600; line-height: 1.35; }
+  .go { margin-top: 10px; font-size: 0.75rem; color: #0071e3; font-weight: 500; }
+</style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1>🎨 UI/UX Pro Max — 实景界面</h1>
+    <p>84 种 UI 风格 · 每种风格渲染成真实可交互的完整界面（Web 网页 / 营销落地页 / 数据看板 / 移动 App）</p>
+    <div class="filters">
+      <button class="active" data-f="all">全部 84</button>
+      <button data-f="General">通用 49</button>
+      <button data-f="Landing Page">落地页 8</button>
+      <button data-f="BI/Analytics">看板 10</button>
+      <button data-f="Mobile">移动端 17</button>
+    </div>
+  </header>
+  <div class="grid">
+      <a href="style-01-minimalism-swiss-style.html" class="card">
+        <div class="swatches"><span style="background:#000000"></span><span style="background:#FFFFFF"></span><span style="background:#F5F1E8"></span><span style="background:#808080"></span></div>
+        <div class="tag">General</div>
+        <div class="title">#1 Minimalism & Swiss Style</div>
+        <div class="go">打开实景界面 →</div>
+      </a>
+      <a href="style-02-neumorphism.html" class="card">
+        <div class="swatches"><span style="background:#C8E0F4"></span><span style="background:#F5E0E8"></span><span style="background:#E8E8E8"></span></div>
+        <div class="tag">General</div>
+        <div class="title">#2 Neumorphism</div>
+        <div class="go">打开实景界面 →</div>
+      </a>
+      <a href="style-03-glassmorphism.html" class="card">
+        <div class="swatches"><span style="background:#0080FF"></span><span style="background:#8B00FF"></span><span style="background:#FF1493"></span><span style="background:#20B2AA"></span></div>
+        <div class="tag">General</div>
+        <div class="title">#3 Glassmorphism</div>
+        <div class="go">打开实景界面 →</div>
+      </a>
+      <a href="style-04-brutalism.html" class="card">
+        <div class="swatches"><span style="background:#FF0000"></span><span style="background:#0000FF"></span><span style="background:#FFFF00"></span><span style="background:#000000"></span></div>
+        <div class="tag">General</div>
+        <div class="title">#4 Brutalism</div>
+        <div class="go">打开实景界面 →</div>
+      </a>
+      <a href="style-05-3d-hyperrealism.html" class="card">
+        <div class="swatches"><span style="background:#001F3F"></span><span style="background:#228B22"></span><span style="background:#800020"></span><span style="background:#FFD700"></span></div>
+        <div class="tag">General</div>
+        <div class="title">#5 3D & Hyperrealism</div>
+        <div class="go">打开实景界面 →</div>
+      </a>
+      <a href="style-06-vibrant-block-based.html" class="card">
+        <div class="swatches"><span style="background:#39FF14"></span><span style="background:#BF00FF"></span><span style="background:#FF1493"></span><span style="background:#00FFFF"></span></div>
+        <div class="tag">General</div>
+        <div class="title">#6 Vibrant & Block-based</div>
+        <div class="go">打开实景界面 →</div>
+      </a>
+      <a href="style-07-dark-mode-oled.html" class="card">
+        <div class="swatches"><span style="background:#000000"></span><span style="background:#121212"></span><span style="background:#0A0E27"></span><span style="background:#39FF14"></span></div>
+        <div class="tag">General</div>
+        <div class="title">#7 Dark Mode (OLED)</div>
+        <div class="go">打开实景界面 →</div>
+      </a>
+      <a href="style-08-accessible-ethical.html" class="card">
+        <div class="swatches"></div>
+        <div class="tag">General</div>
+        <div class="title">#8 Accessible & Ethical</div>
+        <div class="go">打开实景界面 →</div>
+      </a>
+      <a href="style-09-claymorphism.html" class="card">
+        <div class="swatches"><span style="background:#FDBCB4"></span><span style="background:#ADD8E6"></span><span style="background:#98FF98"></span><span style="background:#E6E6FA"></span></div>
+        <div class="tag">General</div>
+        <div class="title">#9 Claymorphism</div>
+        <div class="go">打开实景界面 →</div>
+      </a>
+      <a href="style-10-aurora-ui.html" class="card">
+        <div class="swatches"><span style="background:#0080FF"></span><span style="background:#FF1493"></span><span style="background:#00FFFF"></span></div>
+        <div class="tag">General</div>
+        <div class="title">#10 Aurora UI</div>
+        <div class="go">打开实景界面 →</div>
+      </a>
+      <a href="style-11-retro-futurism.html" class="card">
+        <div class="swatches"><span style="background:#0080FF"></span><span style="background:#FF006E"></span><span style="background:#00FFFF"></span><span style="background:#1A1A2E"></span></div>
+        <div class="tag">General</div>
+        <div class="title">#11 Retro-Futurism</div>
+        <div class="go">打开实景界面 →</div>
+      </a>
+      <a href="style-12-flat-design.html" class="card">
+        <div class="swatches"></div>
+        <div class="tag">General</div>
+        <div class="title">#12 Flat Design</div>
+        <div class="go">打开实景界面 →</div>
+      </a>
+      <a href="style-13-skeuomorphism.html" class="card">
+        <div class="swatches"></div>
+        <div class="tag">General</div>
+        <div class="title">#13 Skeuomorphism</div>
+        <div class="go">打开实景界面 →</div>
+      </a>
+      <a href="style-14-liquid-glass.html" class="card">
+        <div class="swatches"></div>
+        <div class="tag">General</div>
+        <div class="title">#14 Liquid Glass</div>
+        <div class="go">打开实景界面 →</div>
+      </a>
+      <a href="style-15-motion-driven.html" class="card">
+        <div class="swatches"><span style="background:#22C55E"></span><span style="background:#EF4444"></span></div>
+        <div class="tag">General</div>
+        <div class="title">#15 Motion-Driven</div>
+        <div class="go">打开实景界面 →</div>
+      </a>
+      <a href="style-16-micro-interactions.html" class="card">
+        <div class="swatches"><span style="background:#22C55E"></span><span style="background:#EF4444"></span><span style="background:#F59E0B"></span></div>
+        <div class="tag">General</div>
+        <div class="title">#16 Micro-interactions</div>
+        <div class="go">打开实景界面 →</div>
+      </a>
+      <a href="style-17-inclusive-design.html" class="card">
+        <div class="swatches"></div>
+        <div class="tag">General</div>
+        <div class="title">#17 Inclusive Design</div>
+        <div class="go">打开实景界面 →</div>
+      </a>
+      <a href="style-18-zero-interface.html" class="card">
+        <div class="swatches"><span style="background:#FAFAFA"></span><span style="background:#F0F0F0"></span><span style="background:#F5F1E8"></span></div>
+        <div class="tag">General</div>
+        <div class="title">#18 Zero Interface</div>
+        <div class="go">打开实景界面 →</div>
+      </a>
+      <a href="style-19-soft-ui-evolution.html" class="card">
+        <div class="swatches"><span style="background:#87CEEB"></span><span style="background:#FFB6C1"></span><span style="background:#90EE90"></span></div>
+        <div class="tag">General</div>
+        <div class="title">#19 Soft UI Evolution</div>
+        <div class="go">打开实景界面 →</div>
+      </a>
+      <a href="style-20-hero-centric-design.html" class="card">
+        <div class="swatches"></div>
+        <div class="tag">Landing Page</div>
+        <div class="title">#20 Hero-Centric Design</div>
+        <div class="go">打开实景界面 →</div>
+      </a>
+      <a href="style-21-conversion-optimized.html" class="card">
+        <div class="swatches"></div>
+        <div class="tag">Landing Page</div>
+        <div class="title">#21 Conversion-Optimized</div>
+        <div class="go">打开实景界面 →</div>
+      </a>
+      <a href="style-22-feature-rich-showcase.html" class="card">
+        <div class="swatches"></div>
+        <div class="tag">Landing Page</div>
+        <div class="title">#22 Feature-Rich Showcase</div>
+        <div class="go">打开实景界面 →</div>
+      </a>
+      <a href="style-23-minimal-direct.html" class="card">
+        <div class="swatches"></div>
+        <div class="tag">Landing Page</div>
+        <div class="title">#23 Minimal & Direct</div>
+        <div class="go">打开实景界面 →</div>
+      </a>
+      <a href="style-24-social-proof-focused.html" class="card">
+        <div class="swatches"></div>
+        <div class="tag">Landing Page</div>
+        <div class="title">#24 Social Proof-Focused</div>
+        <div class="go">打开实景界面 →</div>
+      </a>
+      <a href="style-25-interactive-product-demo.html" class="card">
+        <div class="swatches"></div>
+        <div class="tag">Landing Page</div>
+        <div class="title">#25 Interactive Product Demo</div>
+        <div class="go">打开实景界面 →</div>
+      </a>
+      <a href="style-26-trust-authority.html" class="card">
+        <div class="swatches"></div>
+        <div class="tag">Landing Page</div>
+        <div class="title">#26 Trust & Authority</div>
+        <div class="go">打开实景界面 →</div>
+      </a>
+      <a href="style-27-storytelling-driven.html" class="card">
+        <div class="swatches"></div>
+        <div class="tag">Landing Page</div>
+        <div class="title">#27 Storytelling-Driven</div>
+        <div class="go">打开实景界面 →</div>
+      </a>
+      <a href="style-28-data-dense-dashboard.html" class="card">
+        <div class="swatches"><span style="background:#F5F5F5"></span><span style="background:#333333"></span><span style="background:#22C55E"></span><span style="background:#F59E0B"></span></div>
+        <div class="tag">BI/Analytics</div>
+        <div class="title">#28 Data-Dense Dashboard</div>
+        <div class="go">打开实景界面 →</div>
+      </a>
+      <a href="style-29-heat-map-heatmap-style.html" class="card">
+        <div class="swatches"><span style="background:#0080FF"></span><span style="background:#FF0000"></span></div>
+        <div class="tag">BI/Analytics</div>
+        <div class="title">#29 Heat Map & Heatmap Style</div>
+        <div class="go">打开实景界面 →</div>
+      </a>
+      <a href="style-30-executive-dashboard.html" class="card">
+        <div class="swatches"></div>
+        <div class="tag">BI/Analytics</div>
+        <div class="title">#30 Executive Dashboard</div>
+        <div class="go">打开实景界面 →</div>
+      </a>
+      <a href="style-31-real-time-monitoring.html" class="card">
+        <div class="swatches"><span style="background:#FF0000"></span><span style="background:#FFA500"></span><span style="background:#22C55E"></span></div>
+        <div class="tag">BI/Analytics</div>
+        <div class="title">#31 Real-Time Monitoring</div>
+        <div class="go">打开实景界面 →</div>
+      </a>
+      <a href="style-32-drill-down-analytics.html" class="card">
+        <div class="swatches"></div>
+        <div class="tag">BI/Analytics</div>
+        <div class="title">#32 Drill-Down Analytics</div>
+        <div class="go">打开实景界面 →</div>
+      </a>
+      <a href="style-33-comparative-analysis-dashboard.html" class="card">
+        <div class="swatches"></div>
+        <div class="tag">BI/Analytics</div>
+        <div class="title">#33 Comparative Analysis Dashboard</div>
+        <div class="go">打开实景界面 →</div>
+      </a>
+      <a href="style-34-predictive-analytics.html" class="card">
+        <div class="swatches"></div>
+        <div class="tag">BI/Analytics</div>
+        <div class="title">#34 Predictive Analytics</div>
+        <div class="go">打开实景界面 →</div>
+      </a>
+      <a href="style-35-user-behavior-analytics.html" class="card">
+        <div class="swatches"></div>
+        <div class="tag">BI/Analytics</div>
+        <div class="title">#35 User Behavior Analytics</div>
+        <div class="go">打开实景界面 →</div>
+      </a>
+      <a href="style-36-financial-dashboard.html" class="card">
+        <div class="swatches"><span style="background:#22C55E"></span><span style="background:#EF4444"></span><span style="background:#003366"></span></div>
+        <div class="tag">BI/Analytics</div>
+        <div class="title">#36 Financial Dashboard</div>
+        <div class="go">打开实景界面 →</div>
+      </a>
+      <a href="style-37-sales-intelligence-dashboard.html" class="card">
+        <div class="swatches"></div>
+        <div class="tag">BI/Analytics</div>
+        <div class="title">#37 Sales Intelligence Dashboard</div>
+        <div class="go">打开实景界面 →</div>
+      </a>
+      <a href="style-38-neubrutalism.html" class="card">
+        <div class="swatches"><span style="background:#FFEB3B"></span><span style="background:#FF5252"></span><span style="background:#2196F3"></span><span style="background:#000000"></span></div>
+        <div class="tag">General</div>
+        <div class="title">#38 Neubrutalism</div>
+        <div class="go">打开实景界面 →</div>
+      </a>
+      <a href="style-39-bento-box-grid.html" class="card">
+        <div class="swatches"><span style="background:#FFFFFF"></span><span style="background:#F5F5F5"></span></div>
+        <div class="tag">General</div>
+        <div class="title">#39 Bento Box Grid</div>
+        <div class="go">打开实景界面 →</div>
+      </a>
+      <a href="style-40-y2k-aesthetic.html" class="card">
+        <div class="swatches"><span style="background:#FF69B4"></span><span style="background:#00FFFF"></span><span style="background:#C0C0C0"></span><span style="background:#9400D3"></span></div>
+        <div class="tag">General</div>
+        <div class="title">#40 Y2K Aesthetic</div>
+        <div class="go">打开实景界面 →</div>
+      </a>
+      <a href="style-41-cyberpunk-ui.html" class="card">
+        <div class="swatches"><span style="background:#00FF00"></span><span style="background:#FF00FF"></span><span style="background:#00FFFF"></span><span style="background:#0D0D0D"></span></div>
+        <div class="tag">General</div>
+        <div class="title">#41 Cyberpunk UI</div>
+        <div class="go">打开实景界面 →</div>
+      </a>
+      <a href="style-42-organic-biophilic.html" class="card">
+        <div class="swatches"><span style="background:#228B22"></span><span style="background:#8B4513"></span><span style="background:#87CEEB"></span><span style="background:#F5F5DC"></span></div>
+        <div class="tag">General</div>
+        <div class="title">#42 Organic Biophilic</div>
+        <div class="go">打开实景界面 →</div>
+      </a>
+      <a href="style-43-ai-native-ui.html" class="card">
+        <div class="swatches"><span style="background:#6366F1"></span><span style="background:#10B981"></span><span style="background:#F5F5F5"></span></div>
+        <div class="tag">General</div>
+        <div class="title">#43 AI-Native UI</div>
+        <div class="go">打开实景界面 →</div>
+      </a>
+      <a href="style-44-memphis-design.html" class="card">
+        <div class="swatches"><span style="background:#FF71CE"></span><span style="background:#FFCE5C"></span><span style="background:#86CCCA"></span><span style="background:#6A7BB4"></span></div>
+        <div class="tag">General</div>
+        <div class="title">#44 Memphis Design</div>
+        <div class="go">打开实景界面 →</div>
+      </a>
+      <a href="style-45-vaporwave.html" class="card">
+        <div class="swatches"><span style="background:#FF71CE"></span><span style="background:#01CDFE"></span><span style="background:#05FFA1"></span><span style="background:#B967FF"></span></div>
+        <div class="tag">General</div>
+        <div class="title">#45 Vaporwave</div>
+        <div class="go">打开实景界面 →</div>
+      </a>
+      <a href="style-46-dimensional-layering.html" class="card">
+        <div class="swatches"><span style="background:#FFFFFF"></span><span style="background:#F5F5F5"></span><span style="background:#E0E0E0"></span></div>
+        <div class="tag">General</div>
+        <div class="title">#46 Dimensional Layering</div>
+        <div class="go">打开实景界面 →</div>
+      </a>
+      <a href="style-47-exaggerated-minimalism.html" class="card">
+        <div class="swatches"><span style="background:#000000"></span><span style="background:#FFFFFF"></span></div>
+        <div class="tag">General</div>
+        <div class="title">#47 Exaggerated Minimalism</div>
+        <div class="go">打开实景界面 →</div>
+      </a>
+      <a href="style-48-kinetic-typography.html" class="card">
+        <div class="swatches"></div>
+        <div class="tag">General</div>
+        <div class="title">#48 Kinetic Typography</div>
+        <div class="go">打开实景界面 →</div>
+      </a>
+      <a href="style-49-parallax-storytelling.html" class="card">
+        <div class="swatches"></div>
+        <div class="tag">General</div>
+        <div class="title">#49 Parallax Storytelling</div>
+        <div class="go">打开实景界面 →</div>
+      </a>
+      <a href="style-50-swiss-modernism-2-0.html" class="card">
+        <div class="swatches"><span style="background:#000000"></span><span style="background:#FFFFFF"></span><span style="background:#F5F5F5"></span></div>
+        <div class="tag">General</div>
+        <div class="title">#50 Swiss Modernism 2.0</div>
+        <div class="go">打开实景界面 →</div>
+      </a>
+      <a href="style-51-hud-sci-fi-fui.html" class="card">
+        <div class="swatches"><span style="background:#00FFFF"></span><span style="background:#0080FF"></span><span style="background:#FF0000"></span><span style="background:#333333"></span></div>
+        <div class="tag">General</div>
+        <div class="title">#51 HUD / Sci-Fi FUI</div>
+        <div class="go">打开实景界面 →</div>
+      </a>
+      <a href="style-52-pixel-art.html" class="card">
+        <div class="swatches"></div>
+        <div class="tag">General</div>
+        <div class="title">#52 Pixel Art</div>
+        <div class="go">打开实景界面 →</div>
+      </a>
+      <a href="style-53-bento-grids.html" class="card">
+        <div class="swatches"><span style="background:#F5F5F7"></span><span style="background:#FFFFFF"></span><span style="background:#1D1D1F"></span></div>
+        <div class="tag">General</div>
+        <div class="title">#53 Bento Grids</div>
+        <div class="go">打开实景界面 →</div>
+      </a>
+      <a href="style-55-spatial-ui-visionos.html" class="card">
+        <div class="swatches"><span style="background:#FFFFFF"></span></div>
+        <div class="tag">General</div>
+        <div class="title">#55 Spatial UI (VisionOS)</div>
+        <div class="go">打开实景界面 →</div>
+      </a>
+      <a href="style-56-e-ink-paper.html" class="card">
+        <div class="swatches"><span style="background:#FDFBF7"></span><span style="background:#F5F5F5"></span><span style="background:#1A1A1A"></span><span style="background:#4A4A4A"></span></div>
+        <div class="tag">General</div>
+        <div class="title">#56 E-Ink / Paper</div>
+        <div class="go">打开实景界面 →</div>
+      </a>
+      <a href="style-57-gen-z-chaos-maximalism.html" class="card">
+        <div class="swatches"><span style="background:#FF00FF"></span><span style="background:#00FF00"></span><span style="background:#FFFF00"></span><span style="background:#0000FF"></span></div>
+        <div class="tag">General</div>
+        <div class="title">#57 Gen Z Chaos / Maximalism</div>
+        <div class="go">打开实景界面 →</div>
+      </a>
+      <a href="style-58-biomimetic-organic-2-0.html" class="card">
+        <div class="swatches"><span style="background:#FF9999"></span><span style="background:#00FF41"></span><span style="background:#001E3C"></span><span style="background:#FF7F50"></span></div>
+        <div class="tag">General</div>
+        <div class="title">#58 Biomimetic / Organic 2.0</div>
+        <div class="go">打开实景界面 →</div>
+      </a>
+      <a href="style-59-anti-polish-raw-aesthetic.html" class="card">
+        <div class="swatches"><span style="background:#FAFAF8"></span><span style="background:#4A4A4A"></span><span style="background:#1A1A1A"></span><span style="background:#C4A77D"></span></div>
+        <div class="tag">General</div>
+        <div class="title">#59 Anti-Polish / Raw Aesthetic</div>
+        <div class="go">打开实景界面 →</div>
+      </a>
+      <a href="style-60-tactile-digital-deformable-ui.html" class="card">
+        <div class="swatches"><span style="background:#C0C0C0"></span><span style="background:#FF9ECD"></span><span style="background:#87CEEB"></span></div>
+        <div class="tag">General</div>
+        <div class="title">#60 Tactile Digital / Deformable UI</div>
+        <div class="go">打开实景界面 →</div>
+      </a>
+      <a href="style-61-nature-distilled.html" class="card">
+        <div class="swatches"><span style="background:#C67B5C"></span><span style="background:#D4C4A8"></span><span style="background:#B5651D"></span><span style="background:#F5F0E1"></span></div>
+        <div class="tag">General</div>
+        <div class="title">#61 Nature Distilled</div>
+        <div class="go">打开实景界面 →</div>
+      </a>
+      <a href="style-62-interactive-cursor-design.html" class="card">
+        <div class="swatches"></div>
+        <div class="tag">General</div>
+        <div class="title">#62 Interactive Cursor Design</div>
+        <div class="go">打开实景界面 →</div>
+      </a>
+      <a href="style-63-voice-first-multimodal.html" class="card">
+        <div class="swatches"><span style="background:#FAFAFA"></span><span style="background:#6B8FAF"></span><span style="background:#9B8FBB"></span></div>
+        <div class="tag">General</div>
+        <div class="title">#63 Voice-First Multimodal</div>
+        <div class="go">打开实景界面 →</div>
+      </a>
+      <a href="style-64-3d-product-preview.html" class="card">
+        <div class="swatches"><span style="background:#E8E8E8"></span><span style="background:#FFFFFF"></span></div>
+        <div class="tag">General</div>
+        <div class="title">#64 3D Product Preview</div>
+        <div class="go">打开实景界面 →</div>
+      </a>
+      <a href="style-65-gradient-mesh-aurora-evolved.html" class="card">
+        <div class="swatches"><span style="background:#00FFFF"></span><span style="background:#FF00FF"></span><span style="background:#FFFF00"></span><span style="background:#0066FF"></span></div>
+        <div class="tag">General</div>
+        <div class="title">#65 Gradient Mesh / Aurora Evolved</div>
+        <div class="go">打开实景界面 →</div>
+      </a>
+      <a href="style-66-editorial-grid-magazine.html" class="card">
+        <div class="swatches"><span style="background:#000000"></span><span style="background:#FFFFFF"></span></div>
+        <div class="tag">General</div>
+        <div class="title">#66 Editorial Grid / Magazine</div>
+        <div class="go">打开实景界面 →</div>
+      </a>
+      <a href="style-67-chromatic-aberration-rgb-split.html" class="card">
+        <div class="swatches"><span style="background:#FF0000"></span><span style="background:#00FF00"></span><span style="background:#0000FF"></span><span style="background:#000000"></span></div>
+        <div class="tag">General</div>
+        <div class="title">#67 Chromatic Aberration / RGB Split</div>
+        <div class="go">打开实景界面 →</div>
+      </a>
+      <a href="style-68-vintage-analog-retro-film.html" class="card">
+        <div class="swatches"><span style="background:#F5E6C8"></span><span style="background:#D4A574"></span><span style="background:#4A7B7C"></span><span style="background:#E8B4B8"></span></div>
+        <div class="tag">General</div>
+        <div class="title">#68 Vintage Analog / Retro Film</div>
+        <div class="go">打开实景界面 →</div>
+      </a>
+      <a href="style-69-bauhaus-包豪斯.html" class="card">
+        <div class="swatches"><span style="background:#D02020"></span><span style="background:#1040C0"></span><span style="background:#F0C020"></span><span style="background:#F0F0F0"></span></div>
+        <div class="tag">Mobile</div>
+        <div class="title">#69 Bauhaus (包豪斯)</div>
+        <div class="go">打开实景界面 →</div>
+      </a>
+      <a href="style-70-minimalist-monochrome.html" class="card">
+        <div class="swatches"><span style="background:#000000"></span><span style="background:#FFFFFF"></span><span style="background:#F5F5F5"></span><span style="background:#525252"></span></div>
+        <div class="tag">Mobile</div>
+        <div class="title">#70 Minimalist Monochrome</div>
+        <div class="go">打开实景界面 →</div>
+      </a>
+      <a href="style-71-modern-dark-cinema-mobile.html" class="card">
+        <div class="swatches"><span style="background:#020203"></span><span style="background:#050506"></span><span style="background:#0a0a0c"></span><span style="background:#5E6AD2"></span></div>
+        <div class="tag">Mobile</div>
+        <div class="title">#71 Modern Dark (Cinema Mobile)</div>
+        <div class="go">打开实景界面 →</div>
+      </a>
+      <a href="style-72-saas-mobile-high-tech-boutique.html" class="card">
+        <div class="swatches"><span style="background:#0052FF"></span><span style="background:#4D7CFF"></span><span style="background:#FAFAFA"></span><span style="background:#0F172A"></span></div>
+        <div class="tag">Mobile</div>
+        <div class="title">#72 SaaS Mobile (High-Tech Boutique)</div>
+        <div class="go">打开实景界面 →</div>
+      </a>
+      <a href="style-73-terminal-cli-mobile.html" class="card">
+        <div class="swatches"><span style="background:#33FF00"></span><span style="background:#050505"></span><span style="background:#FFB000"></span><span style="background:#1A3D1A"></span></div>
+        <div class="tag">Mobile</div>
+        <div class="title">#73 Terminal CLI (Mobile)</div>
+        <div class="go">打开实景界面 →</div>
+      </a>
+      <a href="style-74-kinetic-brutalism-mobile.html" class="card">
+        <div class="swatches"><span style="background:#DFE104"></span><span style="background:#09090B"></span><span style="background:#FAFAFA"></span><span style="background:#27272A"></span></div>
+        <div class="tag">Mobile</div>
+        <div class="title">#74 Kinetic Brutalism (Mobile)</div>
+        <div class="go">打开实景界面 →</div>
+      </a>
+      <a href="style-75-flat-design-mobile-touch-first.html" class="card">
+        <div class="swatches"><span style="background:#3B82F6"></span><span style="background:#10B981"></span><span style="background:#FFFFFF"></span><span style="background:#F3F4F6"></span></div>
+        <div class="tag">Mobile</div>
+        <div class="title">#75 Flat Design Mobile (Touch-First)</div>
+        <div class="go">打开实景界面 →</div>
+      </a>
+      <a href="style-76-material-you-md3-mobile.html" class="card">
+        <div class="swatches"><span style="background:#6750A4"></span><span style="background:#E8DEF8"></span><span style="background:#7D5260"></span><span style="background:#FFFBFE"></span></div>
+        <div class="tag">Mobile</div>
+        <div class="title">#76 Material You (MD3 Mobile)</div>
+        <div class="go">打开实景界面 →</div>
+      </a>
+      <a href="style-77-neo-brutalism-mobile.html" class="card">
+        <div class="swatches"><span style="background:#FFFDF5"></span><span style="background:#FF6B6B"></span><span style="background:#FFD93D"></span><span style="background:#C4B5FD"></span></div>
+        <div class="tag">Mobile</div>
+        <div class="title">#77 Neo Brutalism (Mobile)</div>
+        <div class="go">打开实景界面 →</div>
+      </a>
+      <a href="style-78-bold-typography-mobile-poster.html" class="card">
+        <div class="swatches"><span style="background:#0A0A0A"></span><span style="background:#FAFAFA"></span><span style="background:#1A1A1A"></span><span style="background:#737373"></span></div>
+        <div class="tag">Mobile</div>
+        <div class="title">#78 Bold Typography (Mobile Poster)</div>
+        <div class="go">打开实景界面 →</div>
+      </a>
+      <a href="style-79-academia-scholarly-mobile.html" class="card">
+        <div class="swatches"><span style="background:#1C1714"></span><span style="background:#251E19"></span><span style="background:#E8DFD4"></span><span style="background:#3D332B"></span></div>
+        <div class="tag">Mobile</div>
+        <div class="title">#79 Academia (Scholarly Mobile)</div>
+        <div class="go">打开实景界面 →</div>
+      </a>
+      <a href="style-80-cyberpunk-mobile-hud.html" class="card">
+        <div class="swatches"><span style="background:#0A0A0F"></span><span style="background:#12121A"></span><span style="background:#00FF88"></span><span style="background:#FF00FF"></span></div>
+        <div class="tag">Mobile</div>
+        <div class="title">#80 Cyberpunk Mobile HUD</div>
+        <div class="go">打开实景界面 →</div>
+      </a>
+      <a href="style-81-bitcoin-defi-mobile.html" class="card">
+        <div class="swatches"><span style="background:#F7931A"></span><span style="background:#EA580C"></span><span style="background:#FFD600"></span><span style="background:#030304"></span></div>
+        <div class="tag">Mobile</div>
+        <div class="title">#81 Bitcoin DeFi (Mobile)</div>
+        <div class="go">打开实景界面 →</div>
+      </a>
+      <a href="style-82-claymorphism-mobile.html" class="card">
+        <div class="swatches"><span style="background:#7C3AED"></span><span style="background:#DB2777"></span><span style="background:#F4F1FA"></span><span style="background:#332F3A"></span></div>
+        <div class="tag">Mobile</div>
+        <div class="title">#82 Claymorphism (Mobile)</div>
+        <div class="go">打开实景界面 →</div>
+      </a>
+      <a href="style-83-enterprise-saas-mobile.html" class="card">
+        <div class="swatches"><span style="background:#4F46E5"></span><span style="background:#7C3AED"></span><span style="background:#F8FAFC"></span><span style="background:#FFFFFF"></span></div>
+        <div class="tag">Mobile</div>
+        <div class="title">#83 Enterprise SaaS (Mobile)</div>
+        <div class="go">打开实景界面 →</div>
+      </a>
+      <a href="style-84-sketch-hand-drawn-mobile.html" class="card">
+        <div class="swatches"><span style="background:#FF4D4D"></span><span style="background:#2D2D2D"></span><span style="background:#FDFBF7"></span><span style="background:#E5E0D8"></span></div>
+        <div class="tag">Mobile</div>
+        <div class="title">#84 Sketch Hand-Drawn (Mobile)</div>
+        <div class="go">打开实景界面 →</div>
+      </a>
+      <a href="style-85-neumorphism-mobile.html" class="card">
+        <div class="swatches"><span style="background:#6C63FF"></span><span style="background:#E0E5EC"></span><span style="background:#3D4852"></span><span style="background:#6B7280"></span></div>
+        <div class="tag">Mobile</div>
+        <div class="title">#85 Neumorphism (Mobile)</div>
+        <div class="go">打开实景界面 →</div>
+      </a></div>
+</div>
+<script>
+document.querySelectorAll('.filters button').forEach(b => {
+  b.onclick = () => {
+    document.querySelectorAll('.filters button').forEach(x => x.classList.remove('active'));
+    b.classList.add('active');
+    document.querySelectorAll('.card').forEach(c => {
+      c.style.display = (b.dataset.f === 'all' || c.querySelector('.tag').textContent === b.dataset.f) ? '' : 'none';
+    });
+  };
+});
+</script>
+</body>
+</html>

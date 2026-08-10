@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kinetic Brutalism (Mobile) — UI/UX Pro Max</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif; -webkit-font-smoothing: antialiased; line-height: 1.5; min-height: 100vh; padding-bottom: 40px; }
+  a { text-decoration: none; }
+  .container { max-width: 1080px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 1; }
+  .small { font-size: .78rem; }
+  .muted { opacity: .75; }
+
+  /* Nav */
+  nav { position: sticky; top: 0; z-index: 100; padding: 14px 0; }
+  nav .nav-inner { max-width: 1080px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center; }
+  nav .logo { font-weight: 700; font-size: 1.05rem; }
+  nav .links { display: flex; gap: 22px; font-size: .88rem; font-weight: 500; }
+  nav .links span { cursor: pointer; opacity: .7; }
+  nav .links span:hover { opacity: 1; }
+  nav .nav-actions { display: flex; gap: 8px; }
+  nav .btn { padding: 7px 16px; font-size: .82rem; }
+
+  .btn { display: inline-flex; align-items: center; justify-content: center; padding: 12px 30px; font-size: .92rem; cursor: pointer; transition: all .25s ease; font-family: inherit; }
+  .btn:hover { transform: translateY(-1px); }
+
+  /* Hero */
+  .hero { padding: 72px 0 48px; }
+  .hero-inner { display: flex; align-items: center; justify-content: space-between; gap: 40px; }
+  .hero h1 { font-size: clamp(2rem, 5vw, 3.2rem); line-height: 1.1; margin: 16px 0 12px; }
+  .hero-btns { display: flex; gap: 12px; margin-top: 20px; flex-wrap: wrap; }
+  .tags { display: flex; gap: 8px; flex-wrap: wrap; }
+  .tag { display: inline-block; padding: 4px 14px; font-size: .78rem; border-radius: 999px; }
+  .badge { display: inline-block; padding: 4px 12px; font-size: .72rem; font-weight: 600; border-radius: 999px; text-transform: uppercase; letter-spacing: .5px; }
+  .badge.small { font-size: .65rem; padding: 2px 8px; }
+
+  /* Ring */
+  .ring { width: 150px; height: 150px; border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center; background: conic-gradient(var(--primary,#0071e3) var(--p,72%), transparent 0); position: relative; }
+  .ring::before { content:''; position: absolute; inset: 14px; border-radius: 50%; background: var(--card,#fff); }
+  .ring span, .ring small { position: relative; z-index: 1; }
+  .ring span { font-size: 1.8rem; font-weight: 700; }
+  .ring small { font-size: .7rem; opacity: .7; }
+
+  /* Feats */
+  .feats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin: 24px 0; }
+  .feat { padding: 28px 24px; }
+  .feat-icon { font-size: 1.9rem; margin-bottom: 12px; }
+  .feat h3 { font-size: 1.05rem; margin-bottom: 8px; }
+  .feat p { font-size: .88rem; line-height: 1.6; }
+
+  /* Charts */
+  .charts { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin: 24px 0; }
+  .chart-card { padding: 24px; }
+  .chart-card h3 { font-size: .95rem; margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
+  .bar-chart { display: flex; align-items: flex-end; gap: 8px; height: 160px; padding-top: 8px; }
+  .chart-col { flex: 1; display: flex; flex-direction: column; align-items: center; height: 100%; justify-content: flex-end; gap: 6px; }
+  .chart-col .bar { width: 100%; max-width: 34px; height: 100%; border-radius: 6px 6px 0 0; display: flex; align-items: flex-end; overflow: hidden; }
+  .chart-col .fill { width: 100%; border-radius: 6px 6px 0 0; transition: height .5s; }
+  .chart-col span { font-size: .68rem; opacity: .6; }
+  .line-chart-wrap { height: 160px; position: relative; }
+  .line-chart { position: absolute; inset: 0; background: linear-gradient(180deg, transparent 20%, rgba(128,128,128,.08) 20%, transparent 21%, transparent 40%, rgba(128,128,128,.08) 40%, transparent 41%, transparent 60%, rgba(128,128,128,.08) 60%, transparent 61%, transparent 80%, rgba(128,128,128,.08) 80%, transparent 81%); }
+  .dot { position: absolute; width: 8px; height: 8px; border-radius: 50%; background: var(--primary,#0071e3); transform: translate(-50%,50%); box-shadow: 0 0 8px rgba(0,113,227,.4); }
+
+  /* Stats */
+  .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin: 24px 0; }
+  .stat-card { padding: 28px 20px; text-align: center; }
+  .stat-card .num { font-size: 2.2rem; font-weight: 700; letter-spacing: -1px; margin-bottom: 4px; }
+  .stat-card .muted { font-size: .82rem; }
+
+  /* Bottom grid */
+  .bottom-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin: 24px 0; }
+  .list-card, .form-card { padding: 24px; }
+  .list-item { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px solid rgba(128,128,128,.12); font-size: .88rem; }
+  .list-item:last-child { border-bottom: none; }
+  input, select, textarea { width: 100%; padding: 11px 14px; font-size: .88rem; font-family: inherit; outline: none; }
+  input:focus { border-color: var(--primary,#0071e3); }
+
+  /* CTA */
+  .cta { padding: 48px; text-align: center; margin: 24px 0; }
+  .cta h2 { font-size: clamp(1.5rem, 3vw, 2rem); margin-bottom: 10px; }
+  .cta .btn { margin-top: 16px; }
+
+  /* Progress */
+  .progress .bar { height: 6px; border-radius: 3px; overflow: hidden; }
+  .progress .fill { height: 100%; border-radius: 3px; }
+
+  /* 色板 */
+  .swatch-bar { display: flex; gap: 6px; margin: 24px 0; }
+  .swatch-bar span { flex: 1; height: 40px; border-radius: 8px; border: 1px solid rgba(128,128,128,.2); }
+
+  /* 移动端 */
+  .phone-wrap { display: flex; flex-direction: column; align-items: center; padding: 40px 0; }
+  .phone { width: 340px; max-width: 92vw; border-radius: 36px; padding: 0 16px 12px; position: relative; overflow: hidden; }
+  .phone-notch { width: 110px; height: 24px; border-radius: 0 0 14px 14px; background: #000; margin: 0 auto 10px; }
+  .app-nav { display: flex; justify-content: space-between; align-items: center; padding: 10px 4px; }
+  .app-logo { font-weight: 700; font-size: 1rem; }
+  .app-avatar { width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: .7rem; font-weight: 700; background: rgba(128,128,128,.2); }
+  .app-hero { padding: 18px; margin-bottom: 12px; }
+  .hero-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+  .stats-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: 12px; }
+  .stats-row .stat-card { padding: 14px 8px; }
+  .stats-row .num { font-size: 1.1rem; }
+  .quick-actions { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-bottom: 12px; }
+  .action { display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 10px 4px; }
+  .action-icon { font-size: 1.3rem; }
+  .feed { display: flex; flex-direction: column; gap: 8px; }
+  .feed-item { display: flex; gap: 10px; align-items: center; padding: 12px; }
+  .feed-avatar { width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: .75rem; font-weight: 700; background: rgba(128,128,128,.15); flex-shrink: 0; }
+  .feed-body strong { font-size: .85rem; display: block; }
+  .feed-body p { font-size: .72rem; }
+  .app-tabs { display: flex; justify-content: space-around; padding: 10px 0 4px; border-top: 1px solid rgba(128,128,128,.12); margin-top: 10px; }
+  .tab { font-size: .75rem; opacity: .5; cursor: pointer; }
+  .tab.active { opacity: 1; font-weight: 600; }
+
+  footer { text-align: center; padding: 24px 0; font-size: .8rem; border-top: 1px solid rgba(128,128,128,.12); margin-top: 24px; }
+  footer a { opacity: .7; }
+  footer a:hover { opacity: 1; }
+
+  @media(max-width:768px) {
+    .hero-inner { flex-direction: column; text-align: center; }
+    .hero-btns, .tags { justify-content: center; }
+    .feats, .charts, .stats, .bottom-grid { grid-template-columns: 1fr; }
+    nav .links { display: none; }
+  }
+
+
+  :root { --border: 3px solid #000; --shadow: 8px 8px 0 #000; --radius: 0px; }
+  body { background: #fff; color: #000; }
+  nav { background: #fff; border-bottom: 3px solid #000; }
+  nav a, nav .logo { color: #000; font-weight: 800; }
+  .card, .stat-card, .chart-card, .cta, .phone { background: #fff; border: 3px solid #000; border-radius: 0; box-shadow: 8px 8px 0 #000; }
+  .btn { background: #FF0000; color: #fff; border: 3px solid #000; border-radius: 0; box-shadow: 6px 6px 0 #000; font-weight: 800; text-transform: uppercase; }
+  .btn.secondary { background: #fff; color: #000; }
+  .btn:hover { box-shadow: 3px 3px 0 #000; transform: translate(3px,3px); }
+  h1 { font-weight: 900; text-transform: uppercase; letter-spacing: -2px; font-size: 2.6rem; line-height: .95; }
+  h2, h3 { font-weight: 900; text-transform: uppercase; }
+  .muted { color: #555; font-weight: 600; }
+  .bar { background: #eee; } .bar .fill { background: #000; }
+  .ring { border-color: #000; }
+  .tag { background: #FFFF00; border: 2px solid #000; color: #000; font-weight: 700; }
+  .badge { background: #000; color: #fff; }
+  .ticker { background: #FF0000; color: #fff; border: 3px solid #000; font-weight: 700; text-transform: uppercase; padding: 8px; text-align: center; }
+  input, select, textarea { border: 3px solid #000; border-radius: 0; background: #fff; color: #000; }
+  footer { border-top: 3px solid #000; color: #666; }
+</style>
+</head>
+<body>
+<div class="container">
+  <nav>
+    <div class="nav-inner">
+      <div class="logo">Kinetic Brutalism (Mobile)</div>
+      <div class="links"><span>特性</span><span>图表</span><span>数据</span><span>关于</span></div>
+      <div class="nav-actions">
+        <span class="btn secondary" style="padding:7px 16px;font-size:.82rem;">登录</span>
+        <span class="btn" style="padding:7px 16px;font-size:.82rem;">开始</span>
+      </div>
+    </div>
+  </nav>
+
+  <div class="swatch-bar">
+<span style="background:#DFE104" title="#DFE104"></span><span style="background:#09090B" title="#09090B"></span><span style="background:#FAFAFA" title="#FAFAFA"></span><span style="background:#27272A" title="#27272A"></span><span style="background:#A1A1AA" title="#A1A1AA"></span><span style="background:#3F3F46" title="#3F3F46"></span>
+  </div>
+
+  
+  <!-- 手机 App 界面 -->
+  <div class="phone-wrap">
+    <div class="phone">
+      <div class="phone-notch"></div>
+      <!-- App 内导航 -->
+      <div class="app-nav">
+        <span class="app-logo">Pulse</span>
+        <span class="app-avatar">U</span>
+      </div>
+      <!-- Hero 卡片 -->
+      <div class="card app-hero">
+        <div class="hero-top"><span class="badge">PRO</span><span class="muted small">今日</span></div>
+        <h2 style="font-size:1.4rem;">欢迎回来 👋</h2>
+        <p class="muted" style="font-size:.8rem;">本周活跃度 85%</p>
+        <div class="progress"><div class="bar"><div class="fill" style="width:85%"></div></div></div>
+      </div>
+      <!-- 统计 -->
+      <div class="stats-row">
+        <div class="stat-card"><div class="num">1,284</div><div class="muted small">关注</div></div>
+        <div class="stat-card"><div class="num">38</div><div class="muted small">动态</div></div>
+        <div class="stat-card"><div class="num">4.9</div><div class="muted small">评分</div></div>
+      </div>
+      <!-- 快捷操作 -->
+      <div class="quick-actions">
+        <div class="action"><span class="action-icon">📷</span><span class="small">发布</span></div>
+        <div class="action"><span class="action-icon">💬</span><span class="small">消息</span></div>
+        <div class="action"><span class="action-icon">📊</span><span class="small">数据</span></div>
+        <div class="action"><span class="action-icon">👥</span><span class="small">团队</span></div>
+      </div>
+      <!-- 动态列表 -->
+      <div class="feed">
+        <div class="card feed-item"><div class="feed-avatar" style="background:var(--primary)">A</div><div class="feed-body"><strong>新版本发布</strong><p class="muted small">v2.0 · 刚刚</p></div></div>
+        <div class="card feed-item"><div class="feed-avatar">B</div><div class="feed-body"><strong>周报已生成</strong><p class="muted small">2 小时前</p></div></div>
+        <div class="card feed-item"><div class="feed-avatar">C</div><div class="feed-body"><strong>里程碑达成</strong><p class="muted small">昨天</p></div></div>
+      </div>
+      <!-- 底部 Tab -->
+      <div class="app-tabs">
+        <span class="tab active">首页</span>
+        <span class="tab">动态</span>
+        <span class="tab">消息</span>
+        <span class="tab">我的</span>
+      </div>
+    </div>
+    <p class="muted" style="text-align:center;margin-top:20px;font-size:.8rem;">↑ Kinetic Brutalism (Mobile) — 移动端风格 · 真实 App 界面渲染</p>
+  </div>
+
+  <footer>
+    <div style="margin-bottom:8px;"><a href="index.html">← 返回全部风格索引</a></div>
+    <div>© 2024 Kinetic Brutalism (Mobile) · UI/UX Pro Max #74 · Mobile</div>
+  </footer>
+</div>
+</body>
+</html>
