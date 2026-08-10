@@ -14,6 +14,33 @@
   .small { font-size: .78rem; }
   .muted { opacity: .7; }
 
+  .phone-wrap { display: flex; flex-direction: column; align-items: center; padding: 56px 12px 24px; }
+  .phone { width: 375px; max-width: 100%; background: var(--bg); border: 10px solid #000; border-radius: 42px; overflow: hidden; box-shadow: 0 30px 80px rgba(0,0,0,.35), 0 0 0 2px rgba(128,128,128,.4); }
+  .phone-notch { width: 118px; height: 26px; background: #000; border-radius: 0 0 16px 16px; margin: -10px auto 0; position: relative; z-index: 6; }
+  .app-nav { display: flex; justify-content: space-between; align-items: center; padding: 16px 18px 8px; }
+  .app-logo { font-weight: 700; font-size: .95rem; color: var(--fg); }
+  .app-avatar { width: 30px; height: 30px; border-radius: 50%; background: var(--acc); color: #000; display: flex; align-items: center; justify-content: center; font-size: .78rem; font-weight: 700; }
+  .app-hero { margin: 10px 14px 12px; padding: 18px; }
+  .hero-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+  .progress { margin-top: 12px; }
+  .bar { height: 8px; background: rgba(128,128,128,.22); border-radius: 4px; overflow: hidden; }
+  .bar .fill { background: var(--acc); height: 100%; border-radius: 4px; }
+  .stats-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 0 14px 12px; }
+  .stat-card { padding: 14px 6px; text-align: center; }
+  .stat-card .num { font-size: 1.15rem; font-weight: 800; }
+  .quick-actions { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin: 0 14px 12px; }
+  .action { display: flex; flex-direction: column; align-items: center; gap: 5px; padding: 12px 4px; border-radius: 16px; background: var(--card,#fff); }
+  .action-icon { font-size: 1.2rem; }
+  .feed { margin: 0 14px 12px; display: flex; flex-direction: column; gap: 8px; }
+  .feed-item { display: flex; align-items: center; gap: 10px; padding: 12px 14px; }
+  .feed-avatar { width: 34px; height: 34px; border-radius: 50%; background: var(--acc); color: #000; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: .85rem; flex-shrink: 0; }
+  .feed-body { flex: 1; min-width: 0; }
+  .feed-body p { margin-top: 2px; }
+  .app-tabs { display: flex; border-top: 1px solid rgba(128,128,128,.25); }
+  .tab { flex: 1; text-align: center; padding: 12px 0 10px; font-size: .78rem; opacity: .55; color: var(--fg); }
+  .tab.active { opacity: 1; font-weight: 700; color: var(--acc); border-bottom: 3px solid var(--acc); }
+
+
   nav { position: sticky; top: 0; z-index: 100; padding: 14px 0; }
   nav .nav-inner { max-width: 1080px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center; }
   nav .logo { font-weight: 700; font-size: 1.05rem; color: var(--fg); }
